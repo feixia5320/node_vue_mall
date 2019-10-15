@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+// 日期格式化函数
 require('./../util/util')
 var User = require('./../models/user');
 
@@ -283,7 +284,8 @@ router.post("/setDefault", function (req,res,next) {
 
 //删除地址接口
 router.post("/delAddress", function (req,res,next) {
-  var userId = req.cookies.userId,addressId = req.body.addressId;
+  var userId = req.cookies.userId,
+    addressId = req.body.addressId;
   User.update({
     userId:userId
   },{

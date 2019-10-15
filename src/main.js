@@ -6,7 +6,9 @@ import router from './router'
 import axios from 'axios'
 import Vuex from 'vuex'
 import VueLazyload from 'vue-lazyload'
+//vue无线滚动插线，
 import infiniteScroll from  'vue-infinite-scroll'
+// 管道，过滤器，
 import {currency} from './util/currency'
 
 import './assets/css/base.css'
