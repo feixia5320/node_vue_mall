@@ -7,10 +7,13 @@ import axios from 'axios'
 import Vuex from 'vuex'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// ç®¡é“ï¼Œè¿‡æ»¤å™¨ï¼Œ
+import {currency} from './util/currency'
 
 Vue.use(Vuex);
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+Vue.filter("currency",currency);
 
 const store = new Vuex.Store({
   state: {
@@ -18,7 +21,6 @@ const store = new Vuex.Store({
     cartCount:0
   },
   mutations: {
-    //¸üĞÂÓÃ»§ĞÅÏ¢
     updateUserInfo(state, nickName) {
       state.nickName = nickName;
     },
