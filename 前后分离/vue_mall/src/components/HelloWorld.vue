@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <el-button >Click Me</el-button>
     <h2>Essential Links</h2>
     <ul>
       <li>
