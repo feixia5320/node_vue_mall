@@ -102,28 +102,6 @@ export default {
             this.goodsList = [];
           }
         });
-    },
-    login() {
-      if (!this.userName || !this.userPwd) {
-        this.errorTip = true;
-        return;
-      }
-      axios
-        .post("/users/login", {
-          userName: this.userName,
-          userPwd: this.userPwd
-        })
-        .then(response => {
-          let res = response.data;
-          if (res.status == "0") {
-            this.errorTip = false;
-            this.loginModalFlag = false;
-            this.$store.commit("updateUserInfo", res.result.userName);
-            this.getCartCount();
-          } else {
-            this.errorTip = true;
-          }
-        });
     }
   }
 };

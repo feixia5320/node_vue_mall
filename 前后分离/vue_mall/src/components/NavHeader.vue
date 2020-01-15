@@ -33,53 +33,7 @@
     <div class="md-overlay" v-if="loginModalFlag" @click="loginModalFlag=false"></div>
   </header>
 </template>
-<style>
-.md-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 200;
-}
-.navlogin {
-  width: 100%;
-  height: 25px;
-  margin-right: 30px;
-  text-align: right;
-  background-color: #33f1d4fa;
-}
-.header {
-  width: 100%;
-  background-color: white;
-  font-family: "moderat", sans-serif;
-  font-size: 16px;
-  position: relative;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  width: 100%;
-  height: 70px;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 5px 20px 10px 20px;
-}
-.loginmodel {
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  border: 1px solid;
-  z-index: 300;
-  background-color: white;
-  margin: auto;
-}
-</style>
+
 <script>
 import axios from "axios";
 import { mapState } from "vuex";
@@ -158,3 +112,51 @@ export default {
   }
 };
 </script>
+
+<style>
+.md-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+.navlogin {
+  width: 100%;
+  height: 25px;
+  margin-right: 30px;
+  text-align: right;
+  background-color: #33f1d4fa;
+}
+.header {
+  width: 100%;
+  background-color: white;
+  font-family: "moderat", sans-serif;
+  font-size: 16px;
+  position: relative;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  height: 70px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5px 20px 10px 20px;
+}
+.loginmodel {
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border: 1px solid;
+  z-index: 300;
+  background-color: white;
+  margin: auto;
+}
+</style>
