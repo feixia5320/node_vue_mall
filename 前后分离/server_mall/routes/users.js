@@ -13,6 +13,7 @@ router.get('/test', function(req, res, next) {
   res.send('test');
 });
 
+//写入cookie
 router.post("/login", function (req,res,next) {
   var param = {
       userName:req.body.userName,
@@ -26,6 +27,7 @@ router.post("/login", function (req,res,next) {
           });
       }else{
           if(doc){
+              //写入cookie
               res.cookie("userId",doc.userId,{
                   path:'/',
                   maxAge:1000*60*60
@@ -47,9 +49,9 @@ router.post("/login", function (req,res,next) {
   });
 });
 
-
-//登出接口
+//退出接口
 router.post("/logout", function (req,res,next) {
+  // 删除cookie值
   res.cookie("userId","",{
     path:"/",
     maxAge:-1
@@ -128,12 +130,13 @@ router.get("/cartList", function (req,res,next) {
   });
 });
 
-//购物车删除
+//购物车删除数据
 router.post("/cartDel", function (req,res,next) {
   var userId = req.cookies.userId,productId = req.body.productId;
   User.update({
     userId:userId
   },{
+    // 删除
     $pull:{
       'cartList':{
         'productId':productId
@@ -181,6 +184,8 @@ router.post("/cartEdit", function (req,res,next) {
     }
   })
 });
+
+//获取到数据，直接修改，使用save全部保存
 router.post("/editCheckAll", function (req,res,next) {
   var userId = req.cookies.userId,
       checkAll = req.body.checkAll?'1':'0';
@@ -310,7 +315,7 @@ router.post("/delAddress", function (req,res,next) {
       }
   });
 });
-
+// 生成订单
 router.post("/payMent", function (req,res,next) {
   var userId = req.cookies.userId,
     addressId = req.body.addressId,

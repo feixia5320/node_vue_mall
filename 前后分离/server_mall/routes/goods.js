@@ -41,6 +41,7 @@ router.get("/list", function (req,res,next) {
       }
     }
   }
+  //查找价格区间内的数据，并分页处理
   let goodsModel = Goods.find(params).skip(skip).limit(pageSize);
   goodsModel.sort({'salePrice':sort});
   goodsModel.exec(function (err,doc) {
